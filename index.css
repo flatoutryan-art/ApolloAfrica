@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Apollo Africa — Global Base Styles ── */
+:root {
+  --apollo-green:       #0B2B26;
+  --apollo-green-mid:   #0d2e29;
+  --apollo-green-dark:  #081e1a;
+  --apollo-gold:        #C9A84C;
+  --apollo-gold-light:  #e8c96a;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--apollo-green);
+  color: #ffffff;
+  min-height: 100dvh;
+  overscroll-behavior: none;
+}
+
+/* Accessible focus ring */
+*:focus-visible {
+  outline: 2px solid var(--apollo-gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Range inputs — cross-browser ── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 8px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 9999px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--apollo-green-mid);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--apollo-gold);
+  border: 3px solid var(--apollo-green);
+  box-shadow: 0 0 0 2px var(--apollo-gold);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--apollo-gold);
+  border: 3px solid var(--apollo-green);
+  box-shadow: 0 0 0 2px var(--apollo-gold);
+}
+
+/* ── Select — hide native arrow (custom chevron in JSX) ── */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select option {
+  background-color: var(--apollo-green-mid);
+  color: #ffffff;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--apollo-green); }
+::-webkit-scrollbar-thumb { background: #1a4a3f; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--apollo-gold); }
